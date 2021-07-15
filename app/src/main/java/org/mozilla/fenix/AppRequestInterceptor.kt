@@ -107,6 +107,10 @@ class AppRequestInterceptor(
             }
         }
 
+        if (uri.contains("youtube") || uri.contains("reddit")){
+            return RequestInterceptor.InterceptionResponse.Deny
+        }
+
         // In all other case we let the original request proceed.
         return null
     }
